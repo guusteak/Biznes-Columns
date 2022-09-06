@@ -43,7 +43,7 @@ header, main{
     justify-content: space-around;
 }
 
-.graphs > * {
+.mon {
     min-width: 50px;
     text-align: center;
     display: flex;
