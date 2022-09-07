@@ -46,10 +46,34 @@ function dataReady(data){
                 break;
 
 
+        }
+    for(let j=1;j<=7;j++){
+        let display = () =>{
+            passedargument = j;
+            displayview(passedargument);
+        }
+        document.getElementsByClassName("mon"+j)[0].addEventListener("mousemove", display);
     }
-    
+    function displayview(passedargument){
+        console.log("l");
+        let el = document.createElement("div");
+        el.style.position = "absolute";
+        el.style.width = "50px";
+        el.style.height = "30px";
+        el.style.color = "white";
+        el.style.backgroundColor = "black";
+        el.style.zIndex = "999";
+        el.innerText = data[passedargument-1].amount;
+        const div = document.querySelector(".mon"+passedargument);
+        div.appendChild(el);
+        console.log(data[i].amount);
+        setTimeout(() => {   div.removeChild(el); }, 1000);
+       
+    }
+
     }
 
 
 
-}}
+}
+}
